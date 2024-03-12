@@ -1,0 +1,7 @@
+|Controlador_semaforo
+carril_cerrado => semaforo_rojo.DATAIN
+carril_cerrado => semaforo_verde.DATAIN
+semaforo_rojo <= carril_cerrado.DB_MAX_OUTPUT_PORT_TYPE
+semaforo_verde <= carril_cerrado.DB_MAX_OUTPUT_PORT_TYPE
+
+

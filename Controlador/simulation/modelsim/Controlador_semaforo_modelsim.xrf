@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/estudiante/Desktop/Parcial_peaje/Controlador/Controlador_semaforo.vhd
+source_file = 1, C:/Users/estudiante/Desktop/Parcial_peaje/Controlador/db/Controlador_semaforo.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = Controlador_semaforo
+instance = comp, \semaforo_rojo~output\, semaforo_rojo~output, Controlador_semaforo, 1
+instance = comp, \semaforo_verde~output\, semaforo_verde~output, Controlador_semaforo, 1
+instance = comp, \carril_cerrado~input\, carril_cerrado~input, Controlador_semaforo, 1
