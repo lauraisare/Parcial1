@@ -1,0 +1,26 @@
+# do Controlador_semaforo.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Controlador_semaforo
+# 
+# Top level modules:
+# 	Controlador_semaforo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Controlador_semaforo_vlg_sample_tst
+# -- Compiling module Controlador_semaforo_vlg_check_tst
+# -- Compiling module Controlador_semaforo_vlg_vec_tst
+# 
+# Top level modules:
+# 	Controlador_semaforo_vlg_vec_tst
+# vsim -L cycloneiii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.Controlador_semaforo_vlg_vec_tst 
+# Loading work.Controlador_semaforo_vlg_vec_tst
+# Loading work.Controlador_semaforo
+# Loading cycloneiii_ver.cycloneiii_io_obuf
+# Loading cycloneiii_ver.cycloneiii_io_ibuf
+# Loading cycloneiii_ver.cycloneiii_lcell_comb
+# Loading work.Controlador_semaforo_vlg_sample_tst
+# Loading work.Controlador_semaforo_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform2.vwf.vt(177)
+#    Time: 1 us  Iteration: 0  Instance: /Controlador_semaforo_vlg_vec_tst/tb_out

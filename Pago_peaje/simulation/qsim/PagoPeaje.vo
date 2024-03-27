@@ -1,0 +1,234 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
+
+// DATE "03/19/2024 23:54:35"
+
+// 
+// Device: Altera EP3C16F484C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module PagoPeaje (
+	Categoria,
+	Pago,
+	Tarifa,
+	UsuarioPagado,
+	SemaforoSalida);
+input 	[1:0] Categoria;
+input 	Pago;
+output 	[2:0] Tarifa;
+output 	UsuarioPagado;
+output 	SemaforoSalida;
+
+// Design Ports Information
+// Tarifa[0]	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Tarifa[1]	=>  Location: PIN_L7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Tarifa[2]	=>  Location: PIN_U1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// UsuarioPagado	=>  Location: PIN_N1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SemaforoSalida	=>  Location: PIN_N2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Categoria[0]	=>  Location: PIN_N5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Pago	=>  Location: PIN_U2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Categoria[1]	=>  Location: PIN_M5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \Tarifa[0]~output_o ;
+wire \Tarifa[1]~output_o ;
+wire \Tarifa[2]~output_o ;
+wire \UsuarioPagado~output_o ;
+wire \SemaforoSalida~output_o ;
+wire \Categoria[0]~input_o ;
+wire \Pago~input_o ;
+wire \Categoria[1]~input_o ;
+wire \SumaTarifa~0_combout ;
+wire \SumaTarifa~1_combout ;
+wire \SumaTarifa~2_combout ;
+
+
+// Location: IOOBUF_X0_Y20_N2
+cycloneiii_io_obuf \Tarifa[0]~output (
+	.i(\SumaTarifa~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Tarifa[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Tarifa[0]~output .bus_hold = "false";
+defparam \Tarifa[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y11_N2
+cycloneiii_io_obuf \Tarifa[1]~output (
+	.i(\SumaTarifa~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Tarifa[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Tarifa[1]~output .bus_hold = "false";
+defparam \Tarifa[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y9_N16
+cycloneiii_io_obuf \Tarifa[2]~output (
+	.i(\SumaTarifa~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Tarifa[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Tarifa[2]~output .bus_hold = "false";
+defparam \Tarifa[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y12_N23
+cycloneiii_io_obuf \UsuarioPagado~output (
+	.i(\Pago~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\UsuarioPagado~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \UsuarioPagado~output .bus_hold = "false";
+defparam \UsuarioPagado~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y12_N16
+cycloneiii_io_obuf \SemaforoSalida~output (
+	.i(\Pago~input_o ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\SemaforoSalida~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \SemaforoSalida~output .bus_hold = "false";
+defparam \SemaforoSalida~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y10_N15
+cycloneiii_io_ibuf \Categoria[0]~input (
+	.i(Categoria[0]),
+	.ibar(gnd),
+	.o(\Categoria[0]~input_o ));
+// synopsys translate_off
+defparam \Categoria[0]~input .bus_hold = "false";
+defparam \Categoria[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y9_N8
+cycloneiii_io_ibuf \Pago~input (
+	.i(Pago),
+	.ibar(gnd),
+	.o(\Pago~input_o ));
+// synopsys translate_off
+defparam \Pago~input .bus_hold = "false";
+defparam \Pago~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y11_N8
+cycloneiii_io_ibuf \Categoria[1]~input (
+	.i(Categoria[1]),
+	.ibar(gnd),
+	.o(\Categoria[1]~input_o ));
+// synopsys translate_off
+defparam \Categoria[1]~input .bus_hold = "false";
+defparam \Categoria[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y11_N0
+cycloneiii_lcell_comb \SumaTarifa~0 (
+// Equation(s):
+// \SumaTarifa~0_combout  = (\Categoria[0]~input_o  & (\Pago~input_o  & !\Categoria[1]~input_o ))
+
+	.dataa(\Categoria[0]~input_o ),
+	.datab(\Pago~input_o ),
+	.datac(gnd),
+	.datad(\Categoria[1]~input_o ),
+	.cin(gnd),
+	.combout(\SumaTarifa~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SumaTarifa~0 .lut_mask = 16'h0088;
+defparam \SumaTarifa~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y11_N18
+cycloneiii_lcell_comb \SumaTarifa~1 (
+// Equation(s):
+// \SumaTarifa~1_combout  = (!\Categoria[0]~input_o  & (\Pago~input_o  & \Categoria[1]~input_o ))
+
+	.dataa(\Categoria[0]~input_o ),
+	.datab(\Pago~input_o ),
+	.datac(gnd),
+	.datad(\Categoria[1]~input_o ),
+	.cin(gnd),
+	.combout(\SumaTarifa~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SumaTarifa~1 .lut_mask = 16'h4400;
+defparam \SumaTarifa~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y11_N4
+cycloneiii_lcell_comb \SumaTarifa~2 (
+// Equation(s):
+// \SumaTarifa~2_combout  = (\Categoria[0]~input_o  & (\Pago~input_o  & \Categoria[1]~input_o ))
+
+	.dataa(\Categoria[0]~input_o ),
+	.datab(\Pago~input_o ),
+	.datac(gnd),
+	.datad(\Categoria[1]~input_o ),
+	.cin(gnd),
+	.combout(\SumaTarifa~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SumaTarifa~2 .lut_mask = 16'h8800;
+defparam \SumaTarifa~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign Tarifa[0] = \Tarifa[0]~output_o ;
+
+assign Tarifa[1] = \Tarifa[1]~output_o ;
+
+assign Tarifa[2] = \Tarifa[2]~output_o ;
+
+assign UsuarioPagado = \UsuarioPagado~output_o ;
+
+assign SemaforoSalida = \SemaforoSalida~output_o ;
+
+endmodule

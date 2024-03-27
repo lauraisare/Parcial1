@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Contador1 is
+    Port ( clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           contador_out : out INTEGER range 0 to 59);
+end Contador1;
+
+architecture Contador1_arch of Contador1 is
+    signal contador : INTEGER range 0 to 59 := 0;
+begin
+    proceso_contador: process(clk, reset)
+    begin
+        if reset = '1' then
+            contador <= 0;
+        elsif rising_edge(clk) then
+            if contador = 59 then
+                contador <= 0;
+            else
+                contador <= contador + 1;
+            end if;
+        end if;
+    end process proceso_contador;
+
+    contador_out <= contador;
+	 
+end Contador1_arch;

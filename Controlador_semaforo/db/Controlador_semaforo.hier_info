@@ -1,0 +1,7 @@
+|Controlador_semaforo
+barrera_cerrada => process_0.IN0
+carril_cerrado => process_0.IN1
+semaforo_rojo <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+semaforo_verde <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+

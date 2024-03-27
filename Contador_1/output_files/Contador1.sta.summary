@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'front_sensor'
+Slack : -1.585
+TNS   : -7.365
+
+Type  : Slow 1200mV 85C Model Hold 'front_sensor'
+Slack : -1.151
+TNS   : -5.458
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'front_sensor'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'front_sensor'
+Slack : -1.291
+TNS   : -6.014
+
+Type  : Slow 1200mV 0C Model Hold 'front_sensor'
+Slack : -0.987
+TNS   : -4.690
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'front_sensor'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'front_sensor'
+Slack : -0.433
+TNS   : -1.912
+
+Type  : Fast 1200mV 0C Model Hold 'front_sensor'
+Slack : -0.775
+TNS   : -3.715
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'front_sensor'
+Slack : -3.000
+TNS   : -3.754
+
+------------------------------------------------------------

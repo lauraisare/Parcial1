@@ -1,0 +1,160 @@
+|PeajeCompleto
+clk => FrontSensor:Sensor.clk
+reset => FrontSensor:Sensor.reset
+reset => Contador1:Contador_1min.reset
+front_sensor => FrontSensor:Sensor.front_sensor
+front_sensor => Contador5:Contador_5seg.front_sensor
+front_sensor => Contador1:Contador_1min.front_sensor
+id_valida => FrontSensor:Sensor.id_valida
+identificacion[0] => FrontSensor:Sensor.identificacion[0]
+identificacion[1] => FrontSensor:Sensor.identificacion[1]
+identificacion[2] => FrontSensor:Sensor.identificacion[2]
+identificacion[3] => FrontSensor:Sensor.identificacion[3]
+identificacion[4] => FrontSensor:Sensor.identificacion[4]
+barrera_cerrada => Controlador_semaforo:Controlador.barrera_cerrada
+carril_cerrado => Controlador_semaforo:Controlador.carril_cerrado
+Pago_out => PagoPeaje:Pago.Pago
+back_sensor => Contador5:Contador_5seg.back_sensor
+semaforo_rojo_entrada << Controlador_semaforo:Controlador.semaforo_rojo
+semaforo_verde_entrada << Controlador_semaforo:Controlador.semaforo_verde
+semaforo_rojo_salida << Semaforo_salida:SemaforoSalida.semaforo_rojo
+semaforo_verde_salida << Semaforo_salida:SemaforoSalida.semaforo_verde
+barrera_inicial << FrontSensor:Sensor.barrera_inicial
+barrera_final << FrontSensor:Sensor.barrera_final
+led_verde << FrontSensor:Sensor.led_verde
+led_rojo << FrontSensor:Sensor.led_rojo
+alarm << FrontSensor:Sensor.alarm
+categoria[0] << FrontSensor:Sensor.categoria[0]
+categoria[1] << FrontSensor:Sensor.categoria[1]
+tarifa[0] << PagoPeaje:Pago.Tarifa[0]
+tarifa[1] << PagoPeaje:Pago.Tarifa[1]
+tarifa[2] << PagoPeaje:Pago.Tarifa[2]
+usuario_pagado << PagoPeaje:Pago.UsuarioPagado
+semaforo_out << PagoPeaje:Pago.SemaforoSalida
+contador_vehiculo[0] << Contador1:Contador_1min.Contador_vehiculo[0]
+contador_vehiculo[1] << Contador1:Contador_1min.Contador_vehiculo[1]
+contador_vehiculo[2] << Contador1:Contador_1min.Contador_vehiculo[2]
+contador_vehiculo[3] << Contador1:Contador_1min.Contador_vehiculo[3]
+contador_vehiculo[4] << Contador1:Contador_1min.Contador_vehiculo[4]
+contador_vehiculo[5] << Contador1:Contador_1min.Contador_vehiculo[5]
+display_salida[0] << Contador5:Contador_5seg.contador_out[0]
+display_salida[1] << Contador5:Contador_5seg.contador_out[1]
+display_salida[2] << Contador5:Contador_5seg.contador_out[2]
+display_salida[3] << Contador5:Contador_5seg.contador_out[3]
+display_salida[4] << Contador5:Contador_5seg.contador_out[4]
+display_salida[5] << Contador5:Contador_5seg.contador_out[5]
+display_salida[6] << Contador5:Contador_5seg.contador_out[6]
+
+
+|PeajeCompleto|Controlador_semaforo:Controlador
+barrera_cerrada => process_0.IN0
+carril_cerrado => process_0.IN1
+semaforo_rojo <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+semaforo_verde <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PeajeCompleto|FrontSensor:Sensor
+clk => alarm~reg0.CLK
+clk => led_rojo~reg0.CLK
+clk => led_verde~reg0.CLK
+clk => categoria[0]~reg0.CLK
+clk => categoria[1]~reg0.CLK
+clk => barrera_final~reg0.CLK
+clk => barrera_inicial~reg0.CLK
+clk => vehiculo_detectado.CLK
+clk => intentos[0].CLK
+clk => intentos[1].CLK
+reset => alarm~reg0.ACLR
+reset => led_rojo~reg0.ACLR
+reset => led_verde~reg0.ACLR
+reset => categoria[0]~reg0.ACLR
+reset => categoria[1]~reg0.ACLR
+reset => barrera_final~reg0.ACLR
+reset => barrera_inicial~reg0.ACLR
+reset => vehiculo_detectado.ACLR
+reset => intentos[0].ACLR
+reset => intentos[1].ACLR
+front_sensor => barrera_final.OUTPUTSELECT
+id_valida => categoria.OUTPUTSELECT
+id_valida => categoria.OUTPUTSELECT
+id_valida => barrera_inicial.OUTPUTSELECT
+id_valida => led_verde.OUTPUTSELECT
+id_valida => vehiculo_detectado.OUTPUTSELECT
+id_valida => intentos.OUTPUTSELECT
+id_valida => intentos.OUTPUTSELECT
+id_valida => led_rojo.OUTPUTSELECT
+id_valida => alarm.OUTPUTSELECT
+identificacion[0] => ~NO_FANOUT~
+identificacion[1] => categoria.DATAB
+identificacion[2] => categoria.DATAB
+identificacion[3] => ~NO_FANOUT~
+identificacion[4] => ~NO_FANOUT~
+barrera_inicial <= barrera_inicial~reg0.DB_MAX_OUTPUT_PORT_TYPE
+barrera_final <= barrera_final~reg0.DB_MAX_OUTPUT_PORT_TYPE
+categoria[0] <= categoria[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+categoria[1] <= categoria[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led_verde <= led_verde~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led_rojo <= led_rojo~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alarm <= alarm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PeajeCompleto|Semaforo_salida:SemaforoSalida
+SemaforoSalida => semaforo_verde.DATAIN
+SemaforoSalida => semaforo_rojo.DATAIN
+semaforo_rojo <= SemaforoSalida.DB_MAX_OUTPUT_PORT_TYPE
+semaforo_verde <= SemaforoSalida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PeajeCompleto|PagoPeaje:Pago
+Categoria[0] => Mux0.IN5
+Categoria[0] => Mux1.IN5
+Categoria[0] => Mux2.IN5
+Categoria[1] => Mux0.IN4
+Categoria[1] => Mux1.IN4
+Categoria[1] => Mux2.IN4
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => UsuarioPagado.DATAIN
+Pago => SemaforoSalida.DATAIN
+Tarifa[0] <= SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+Tarifa[1] <= SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+Tarifa[2] <= SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+UsuarioPagado <= Pago.DB_MAX_OUTPUT_PORT_TYPE
+SemaforoSalida <= Pago.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PeajeCompleto|Contador5:Contador_5seg
+front_sensor => contador[0].OUTPUTSELECT
+front_sensor => contador[1].OUTPUTSELECT
+front_sensor => contador[1].IN0
+front_sensor => contador[2].OUTPUTSELECT
+back_sensor => contador[1].IN1
+contador_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PeajeCompleto|Contador1:Contador_1min
+reset => vehiculo_detectado.IN1
+reset => vehiculo_detectado.OUTPUTSELECT
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+front_sensor => process_0.IN1
+front_sensor => vehiculo_detectado.IN1
+Contador_vehiculo[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Contador_vehiculo[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Contador_vehiculo[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Contador_vehiculo[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+Contador_vehiculo[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
+Contador_vehiculo[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
+
+

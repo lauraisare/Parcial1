@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\estudiante\Desktop\Parcial_peaje\Controlador\simulation\qsim
+vControlador_semaforo
+Z1 !s100 GdXkNI_kGC:XB`z3062bK2
+Z2 I28nV7O:54WYL2:9Yo^<h^2
+Z3 V1cA<loEMIMgX>GQ9j<J8U0
+Z4 dC:\Users\laura\Documents\Parcial_peaje\Controlador_semaforo\simulation\qsim
+Z5 w1710866683
+Z6 8Controlador_semaforo.vo
+Z7 FControlador_semaforo.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Controlador_semaforo.vo|
+Z10 o-work work -O0
+Z11 n@controlador_semaforo
+!i10b 1
+!s85 0
+Z12 !s108 1710866683.580000
+Z13 !s107 Controlador_semaforo.vo|
+!s101 -O0
+vControlador_semaforo_vlg_check_tst
+!i10b 1
+Z14 !s100 DU40BPkH6QoAjNjjbGLD12
+Z15 I1Pd[Tfh30[<Hn4jzHSe:T0
+Z16 V?]mdN7IL9U3]RmP;SBJ4`2
+R4
+Z17 w1710866682
+Z18 8Waveform2.vwf.vt
+Z19 FWaveform2.vwf.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z20 !s108 1710866683.631000
+Z21 !s107 Waveform2.vwf.vt|
+Z22 !s90 -work|work|Waveform2.vwf.vt|
+!s101 -O0
+R10
+Z23 n@controlador_semaforo_vlg_check_tst
+vControlador_semaforo_vlg_sample_tst
+!i10b 1
+Z24 !s100 A@`=XR4dQ11gekCFO5;_d1
+Z25 ITjaj[j;YWzhRHXJ;<5f;c0
+Z26 VZY]P1A5Wfo@8@am962QiG1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@controlador_semaforo_vlg_sample_tst
+vControlador_semaforo_vlg_vec_tst
+!i10b 1
+!s100 zk1P0@2U?k4?VeJij;;293
+IYC<@m^DRlKlS<RSHDKknE2
+Z28 V`^R[LK2Ako=l^:e7G?WEF2
+R4
+R17
+R18
+R19
+Z29 L0 181
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@controlador_semaforo_vlg_vec_tst

@@ -1,0 +1,7 @@
+|Semaforo_salida
+SemaforoSalida => semaforo_verde.DATAIN
+SemaforoSalida => semaforo_rojo.DATAIN
+semaforo_rojo <= SemaforoSalida.DB_MAX_OUTPUT_PORT_TYPE
+semaforo_verde <= SemaforoSalida.DB_MAX_OUTPUT_PORT_TYPE
+
+

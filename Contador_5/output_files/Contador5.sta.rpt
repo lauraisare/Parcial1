@@ -1,0 +1,875 @@
+TimeQuest Timing Analyzer report for Contador5
+Tue Mar 19 13:28:42 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'back_sensor'
+ 13. Slow 1200mV 85C Model Hold: 'back_sensor'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'back_sensor'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'back_sensor'
+ 27. Slow 1200mV 0C Model Hold: 'back_sensor'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'back_sensor'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'back_sensor'
+ 40. Fast 1200mV 0C Model Hold: 'back_sensor'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'back_sensor'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Slow Corner Signal Integrity Metrics
+ 55. Fast Corner Signal Integrity Metrics
+ 56. Setup Transfers
+ 57. Hold Transfers
+ 58. Report TCCS
+ 59. Report RSKM
+ 60. Unconstrained Paths
+ 61. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Contador5                                          ;
+; Device Family      ; Cyclone III                                        ;
+; Device Name        ; EP3C16F484C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                   ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; back_sensor ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { back_sensor } ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                         ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; 526.59 MHz ; 250.0 MHz       ; back_sensor ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++--------------------------------------+
+; Slow 1200mV 85C Model Setup Summary  ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; back_sensor ; -0.899 ; -2.541        ;
++-------------+--------+---------------+
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Hold Summary  ;
++-------------+-------+---------------+
+; Clock       ; Slack ; End Point TNS ;
++-------------+-------+---------------+
+; back_sensor ; 0.561 ; 0.000         ;
++-------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------------+--------+----------------------------+
+; Clock       ; Slack  ; End Point TNS              ;
++-------------+--------+----------------------------+
+; back_sensor ; -3.000 ; -3.000                     ;
++-------------+--------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'back_sensor'                                                               ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -0.899 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.045     ; 0.934      ;
+; -0.866 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.046     ; 0.913      ;
+; -0.776 ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 1.000        ; -0.048     ; 0.681      ;
+; -0.751 ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.048     ; 0.796      ;
+; -0.651 ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.048     ; 0.683      ;
+; -0.638 ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.049     ; 0.682      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'back_sensor'                                                               ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.561 ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 0.000        ; 0.048      ; 0.609      ;
+; 0.571 ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.047      ; 0.618      ;
+; 0.572 ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.048      ; 0.620      ;
+; 0.669 ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.048      ; 0.717      ;
+; 0.746 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.050      ; 0.796      ;
+; 0.811 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.051      ; 0.862      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'back_sensor'                                                             ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; back_sensor ; Rise       ; back_sensor                   ;
+; 0.322  ; 0.322        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|datad           ;
+; 0.328  ; 0.328        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[1]                   ;
+; 0.328  ; 0.328        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[2]                   ;
+; 0.329  ; 0.329        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]|datac             ;
+; 0.329  ; 0.329        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 0.330  ; 0.330        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[0]|datac             ;
+; 0.332  ; 0.332        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[0]                   ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.358  ; 0.358        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.358  ; 0.358        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.642  ; 0.642        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.642  ; 0.642        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 0.658  ; 0.658        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.663  ; 0.663        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.667  ; 0.667        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[0]                   ;
+; 0.669  ; 0.669        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[0]|datac             ;
+; 0.670  ; 0.670        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]|datac             ;
+; 0.670  ; 0.670        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 0.671  ; 0.671        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[1]                   ;
+; 0.671  ; 0.671        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[2]                   ;
+; 0.678  ; 0.678        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|datad           ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.743 ; 1.171 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.576 ; 0.205 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 7.971 ; 7.956 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 7.790 ; 7.712 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 7.806 ; 7.803 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 7.606 ; 7.562 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 7.780 ; 7.702 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 7.971 ; 7.956 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 7.946 ; 7.915 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 7.745 ; 7.800 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                 ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 7.280 ; 7.206 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 7.290 ; 7.216 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 7.404 ; 7.362 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 7.326 ; 7.227 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 7.280 ; 7.206 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 7.521 ; 7.455 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 7.501 ; 7.429 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 7.419 ; 7.497 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; 590.32 MHz ; 250.0 MHz       ; back_sensor ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------+
+; Slow 1200mV 0C Model Setup Summary   ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; back_sensor ; -0.694 ; -1.951        ;
++-------------+--------+---------------+
+
+
++-------------------------------------+
+; Slow 1200mV 0C Model Hold Summary   ;
++-------------+-------+---------------+
+; Clock       ; Slack ; End Point TNS ;
++-------------+-------+---------------+
+; back_sensor ; 0.509 ; 0.000         ;
++-------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------------+--------+---------------------------+
+; Clock       ; Slack  ; End Point TNS             ;
++-------------+--------+---------------------------+
+; back_sensor ; -3.000 ; -3.000                    ;
++-------------+--------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'back_sensor'                                                                ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -0.694 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.039     ; 0.832      ;
+; -0.673 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.040     ; 0.823      ;
+; -0.584 ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 1.000        ; -0.042     ; 0.611      ;
+; -0.565 ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.042     ; 0.713      ;
+; -0.487 ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.042     ; 0.622      ;
+; -0.473 ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.043     ; 0.620      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'back_sensor'                                                                ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.509 ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 0.000        ; 0.042      ; 0.551      ;
+; 0.513 ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.041      ; 0.554      ;
+; 0.514 ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.042      ; 0.556      ;
+; 0.597 ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.042      ; 0.639      ;
+; 0.677 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.044      ; 0.721      ;
+; 0.736 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.045      ; 0.781      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'back_sensor'                                                              ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; back_sensor ; Rise       ; back_sensor                   ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|datad           ;
+; 0.359  ; 0.359        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.373  ; 0.373        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]|datac             ;
+; 0.373  ; 0.373        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[0]|datac             ;
+; 0.375  ; 0.375        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[1]                   ;
+; 0.375  ; 0.375        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[2]                   ;
+; 0.379  ; 0.379        ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[0]                   ;
+; 0.388  ; 0.388        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.388  ; 0.388        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.608  ; 0.608        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.608  ; 0.608        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 0.618  ; 0.618        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[0]                   ;
+; 0.621  ; 0.621        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[1]                   ;
+; 0.621  ; 0.621        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[2]                   ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[0]|datac             ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]|datac             ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 0.639  ; 0.639        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.663  ; 0.663        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.663  ; 0.663        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|datad           ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.553 ; 0.919 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.610 ; 0.281 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 7.458 ; 7.389 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 7.260 ; 7.170 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 7.298 ; 7.258 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 7.117 ; 7.038 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 7.250 ; 7.160 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 7.458 ; 7.389 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 7.431 ; 7.346 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 7.213 ; 7.306 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                 ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 6.827 ; 6.734 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 6.837 ; 6.744 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 6.938 ; 6.869 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 6.858 ; 6.753 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 6.827 ; 6.734 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 7.057 ; 6.946 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 7.037 ; 6.921 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 6.927 ; 7.043 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------+
+; Fast 1200mV 0C Model Setup Summary   ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; back_sensor ; -0.061 ; -0.099        ;
++-------------+--------+---------------+
+
+
++-------------------------------------+
+; Fast 1200mV 0C Model Hold Summary   ;
++-------------+-------+---------------+
+; Clock       ; Slack ; End Point TNS ;
++-------------+-------+---------------+
+; back_sensor ; 0.299 ; 0.000         ;
++-------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------------+--------+---------------------------+
+; Clock       ; Slack  ; End Point TNS             ;
++-------------+--------+---------------------------+
+; back_sensor ; -3.000 ; -3.093                    ;
++-------------+--------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'back_sensor'                                                                ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -0.061 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.026     ; 0.518      ;
+; -0.038 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.027     ; 0.500      ;
+; 0.002  ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 1.000        ; -0.027     ; 0.377      ;
+; 0.029  ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.027     ; 0.433      ;
+; 0.086  ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 1.000        ; -0.027     ; 0.370      ;
+; 0.094  ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 1.000        ; -0.028     ; 0.367      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'back_sensor'                                                                ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.299 ; contador[1] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.026      ; 0.325      ;
+; 0.299 ; contador[1] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.027      ; 0.326      ;
+; 0.299 ; contador[0] ; contador[0] ; back_sensor  ; back_sensor ; 0.000        ; 0.027      ; 0.326      ;
+; 0.352 ; contador[2] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.027      ; 0.379      ;
+; 0.396 ; contador[0] ; contador[2] ; back_sensor  ; back_sensor ; 0.000        ; 0.027      ; 0.423      ;
+; 0.426 ; contador[0] ; contador[1] ; back_sensor  ; back_sensor ; 0.000        ; 0.028      ; 0.454      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'back_sensor'                                                              ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; back_sensor ; Rise       ; back_sensor                   ;
+; -0.017 ; -0.017       ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[0]                   ;
+; -0.017 ; -0.017       ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[1]                   ;
+; -0.017 ; -0.017       ; 0.000          ; High Pulse Width ; back_sensor ; Fall       ; contador[2]                   ;
+; -0.014 ; -0.014       ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[0]|datac             ;
+; -0.014 ; -0.014       ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]|datac             ;
+; -0.014 ; -0.014       ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 0.022  ; 0.022        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.022  ; 0.022        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 0.048  ; 0.048        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|datad           ;
+; 0.053  ; 0.053        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; back_sensor ; Rise       ; back_sensor~input|i           ;
+; 0.882  ; 0.882        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; back_sensor~input|o           ;
+; 0.946  ; 0.946        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|combout         ;
+; 0.950  ; 0.950        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1|datad           ;
+; 0.975  ; 0.975        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|inclk[0] ;
+; 0.975  ; 0.975        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]~1clkctrl|outclk   ;
+; 1.009  ; 1.009        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[1]|datac             ;
+; 1.009  ; 1.009        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[2]|datac             ;
+; 1.010  ; 1.010        ; 0.000          ; High Pulse Width ; back_sensor ; Rise       ; contador[0]|datac             ;
+; 1.012  ; 1.012        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[1]                   ;
+; 1.012  ; 1.012        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[2]                   ;
+; 1.013  ; 1.013        ; 0.000          ; Low Pulse Width  ; back_sensor ; Fall       ; contador[0]                   ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.028 ; 0.596 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.715 ; 0.182 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 5.001 ; 5.073 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 4.919 ; 4.916 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 4.913 ; 4.987 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 4.775 ; 4.825 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 4.909 ; 4.906 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 4.988 ; 5.073 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 5.001 ; 5.046 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 4.950 ; 4.895 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                 ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 4.595 ; 4.606 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 4.605 ; 4.616 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 4.688 ; 4.735 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 4.641 ; 4.619 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 4.595 ; 4.606 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 4.738 ; 4.790 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 4.722 ; 4.767 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 4.768 ; 4.724 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.899 ; 0.299 ; N/A      ; N/A     ; -3.000              ;
+;  back_sensor     ; -0.899 ; 0.299 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -2.541 ; 0.0   ; 0.0      ; 0.0     ; -3.093              ;
+;  back_sensor     ; -2.541 ; 0.000 ; N/A      ; N/A     ; -3.093              ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.743 ; 1.171 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; front_sensor ; back_sensor ; 0.715 ; 0.281 ; Fall       ; back_sensor     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 7.971 ; 7.956 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 7.790 ; 7.712 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 7.806 ; 7.803 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 7.606 ; 7.562 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 7.780 ; 7.702 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 7.971 ; 7.956 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 7.946 ; 7.915 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 7.745 ; 7.800 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                 ;
++------------------+-------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+-------------+-------+-------+------------+-----------------+
+; contador_out[*]  ; back_sensor ; 4.595 ; 4.606 ; Fall       ; back_sensor     ;
+;  contador_out[0] ; back_sensor ; 4.605 ; 4.616 ; Fall       ; back_sensor     ;
+;  contador_out[1] ; back_sensor ; 4.688 ; 4.735 ; Fall       ; back_sensor     ;
+;  contador_out[2] ; back_sensor ; 4.641 ; 4.619 ; Fall       ; back_sensor     ;
+;  contador_out[3] ; back_sensor ; 4.595 ; 4.606 ; Fall       ; back_sensor     ;
+;  contador_out[4] ; back_sensor ; 4.738 ; 4.790 ; Fall       ; back_sensor     ;
+;  contador_out[5] ; back_sensor ; 4.722 ; 4.767 ; Fall       ; back_sensor     ;
+;  contador_out[6] ; back_sensor ; 4.768 ; 4.724 ; Fall       ; back_sensor     ;
++------------------+-------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin             ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; contador_out[0] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[1] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[2] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[3] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[4] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[5] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; contador_out[6] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; front_sensor            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; back_sensor             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; contador_out[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-06 V                   ; 2.36 V              ; -0.0113 V           ; 0.122 V                              ; 0.022 V                              ; 4.5e-10 s                   ; 4.45e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-06 V                  ; 2.36 V             ; -0.0113 V          ; 0.122 V                             ; 0.022 V                             ; 4.5e-10 s                  ; 4.45e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.68e-07 V                   ; 2.35 V              ; -0.0132 V           ; 0.2 V                                ; 0.027 V                              ; 5.26e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.68e-07 V                  ; 2.35 V             ; -0.0132 V          ; 0.2 V                               ; 0.027 V                             ; 5.26e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.36e-07 V                   ; 2.35 V              ; -0.00444 V          ; 0.18 V                               ; 0.019 V                              ; 7.23e-10 s                  ; 9.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.36e-07 V                  ; 2.35 V             ; -0.00444 V         ; 0.18 V                              ; 0.019 V                             ; 7.23e-10 s                 ; 9.82e-10 s                 ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; contador_out[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; contador_out[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.72 V              ; -0.0747 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-10 s                   ; 3.01e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.72 V             ; -0.0747 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-10 s                  ; 3.01e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-08 V                   ; 2.7 V               ; -0.0212 V           ; 0.204 V                              ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-08 V                  ; 2.7 V              ; -0.0212 V          ; 0.204 V                             ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; No                        ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; back_sensor ; back_sensor ; 0        ; 0        ; 0        ; 6        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; back_sensor ; back_sensor ; 0        ; 0        ; 0        ; 6        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 17    ; 17   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Mar 19 13:28:40 2024
+Info: Command: quartus_sta Contador5 -c Contador5
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 3 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Contador5.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name back_sensor back_sensor
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.899
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.899              -2.541 back_sensor 
+Info (332146): Worst-case hold slack is 0.561
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.561               0.000 back_sensor 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -3.000 back_sensor 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.694
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.694              -1.951 back_sensor 
+Info (332146): Worst-case hold slack is 0.509
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.509               0.000 back_sensor 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -3.000 back_sensor 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.061
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.061              -0.099 back_sensor 
+Info (332146): Worst-case hold slack is 0.299
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.299               0.000 back_sensor 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -3.093 back_sensor 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4622 megabytes
+    Info: Processing ended: Tue Mar 19 13:28:42 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

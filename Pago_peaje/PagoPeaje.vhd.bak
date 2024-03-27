@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity PagoPeaje is
+    Port (
+        -- Entradas
+        Categoria : in std_logic_vector(1 downto 0); -- Categoría del vehículo (CATI=1, CATII=2, CATIII=4)
+        Pago : in std_logic; -- Señal que indica que el usuario ha pagado el peaje
+
+        -- Salidas
+        Tarifa : out std_logic_vector(2 downto 0); -- Tarifa calculada (en binario)
+        UsuarioPagado : out std_logic -- Indicador de que el usuario pagó el peaje
+		  SemafaroSalida : out std_logic -- Semáforo de salida (Verde=1, Rojo=0)
+    );
+end PagoPeaje;
+
+architecture PagoPeaje_arch of PagoPeaje is
+    signal TarifaInterna : std_logic_vector(2 downto 0); -- Tarifa interna (depende de la categoría)
+    signal SumaTarifa : std_logic_vector(2 downto 0); -- Suma de tarifa y categoría
+begin
+    -- Lógica para determinar la tarifa interna según la categoría
+    process(Categoria)
+    begin
+        case Categoria is
+            when "01" => TarifaInterna <= "001"; -- CATI
+            when "10" => TarifaInterna <= "010"; -- CATII
+            when "11" => TarifaInterna <= "110"; -- CATIII
+            when others => TarifaInterna <= "000"; -- Categoría no válida
+        end case;
+    end process;
+
+    -- Sumador para calcular la tarifa total
+    SumaTarifa <= TarifaInterna when Pago = '1' else "000";
+
+    -- Indicador de que el usuario pagó el peaje
+    UsuarioPagado <= '1' when Pago = '1' else '0';
+
+    -- Salida de la tarifa calculada
+    Tarifa <= SumaTarifa;
+	 
+	 -- Semáforo de salida
+    SemafaroSalida <= '1' when Pago = '1' else '0';
+	 
+end PagoPeaje_arch;

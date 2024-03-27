@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\laura\Documents\Parcial_peaje\Contador_5\simulation\qsim
+vContador5
+Z1 IZGTLdP>8K`MVO^]PfXfff1
+Z2 V8RgH02X[hAc2WSLQc[=>l0
+Z3 dC:\Users\laura\Documents\Parcial_peaje\Contador_5\simulation\qsim
+Z4 w1710872423
+Z5 8Contador5.vo
+Z6 FContador5.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@contador5
+!i10b 1
+Z10 !s100 cSn^N[O?CPN>l2cY6MJ8;3
+!s85 0
+Z11 !s108 1710872424.321000
+Z12 !s107 Contador5.vo|
+Z13 !s90 -work|work|Contador5.vo|
+!s101 -O0
+vContador5_vlg_check_tst
+!i10b 1
+!s100 <^jhkZ>fV<?ZIimNgGbi;3
+IL^aoilOKKMh0Q?mc@iUol0
+Vm;jzY9`g?U=Dm;BDKSeTi0
+R3
+R4
+Z14 8Waveform.vwf.vt
+Z15 FWaveform.vwf.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z16 !s108 1710872424.372000
+Z17 !s107 Waveform.vwf.vt|
+Z18 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R8
+n@contador5_vlg_check_tst
+vContador5_vlg_sample_tst
+!i10b 1
+!s100 lX4[NiViM@XK]h<^E?C6o3
+IH@BXWE:F[U0DViUcDaPa=1
+VBPm^0CFciNHdXY:Ria^:O3
+R3
+R4
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+n@contador5_vlg_sample_tst
+vContador5_vlg_vec_tst
+!i10b 1
+!s100 `oF]j^CWYo044]5z[kbVB0
+IYPiCi_=cYAYP?GoCG=Xmk3
+VC]^1mKG<BaJMaEBAZHFz21
+R3
+R4
+R14
+R15
+L0 261
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+n@contador5_vlg_vec_tst

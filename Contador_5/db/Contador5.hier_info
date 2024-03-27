@@ -1,0 +1,15 @@
+|Contador5
+front_sensor => contador[0].OUTPUTSELECT
+front_sensor => contador[1].OUTPUTSELECT
+front_sensor => contador[1].IN0
+front_sensor => contador[2].OUTPUTSELECT
+back_sensor => contador[1].IN1
+contador_out[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+contador_out[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

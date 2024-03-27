@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\laura\Documents\Parcial_peaje\Semaforo2\simulation\qsim
+vSemaforo_salida
+Z1 !s100 cL_74@EPRl5]E]`QFE<oY2
+Z2 Id7Uh0ecmn7IgCFlTMY8_C1
+Z3 Va28n6H;ai2U;Q>6n;GA1O0
+Z4 dC:\Users\laura\Documents\Parcial_peaje\Semaforo2\simulation\qsim
+Z5 w1710867646
+Z6 8Semaforo_salida.vo
+Z7 FSemaforo_salida.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Semaforo_salida.vo|
+Z10 o-work work -O0
+Z11 n@semaforo_salida
+!i10b 1
+!s85 0
+Z12 !s108 1710867647.447000
+Z13 !s107 Semaforo_salida.vo|
+!s101 -O0
+vSemaforo_salida_vlg_check_tst
+!i10b 1
+Z14 !s100 @n]=>RO?>Nb@:F91fS_4A1
+Z15 I@aS=HRkU:4WFNDJV=O`Ai0
+Z16 Vc>QQad^Z5j>MX7JRz5H0e2
+R4
+R5
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 57
+R8
+r1
+!s85 0
+31
+Z19 !s108 1710867647.549000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z22 n@semaforo_salida_vlg_check_tst
+vSemaforo_salida_vlg_sample_tst
+!i10b 1
+Z23 !s100 RU@GRVi>G:I05F1FXI[iU3
+Z24 IU`GN]aQc11jACSSZ6ZJYR3
+Z25 V@P3?:GcAQL=RE;z5gVAGY3
+R4
+R5
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z26 n@semaforo_salida_vlg_sample_tst
+vSemaforo_salida_vlg_vec_tst
+!i10b 1
+!s100 mO9]5?5lX3lOi>O=zLHHF0
+I272=SIHX8mWlSoT66Q[[F2
+Z27 V1=bgUT?MLd`PlzkY5Bl5B3
+R4
+R5
+R17
+R18
+Z28 L0 179
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z29 n@semaforo_salida_vlg_vec_tst

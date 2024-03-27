@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\laura\Documents\Parcial_peaje\Front\simulation\qsim
+vFrontSensor
+Z1 !s100 dT;UODBNGmAT:8zE]fGm30
+Z2 I8oE=PAzY_T]=@KEM`i^jW2
+Z3 VHC8_l5DHWZV::_h]fdMIX1
+Z4 dC:\Users\laura\Documents\Parcial_peaje\Front\simulation\qsim
+Z5 w1710956851
+Z6 8FrontSensor.vo
+Z7 FFrontSensor.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|FrontSensor.vo|
+Z10 o-work work -O0
+Z11 n@front@sensor
+!i10b 1
+!s85 0
+Z12 !s108 1710956852.461000
+Z13 !s107 FrontSensor.vo|
+!s101 -O0
+vFrontSensor_vlg_check_tst
+!i10b 1
+Z14 !s100 k_cYoD00kNN>LClAWL`<Y1
+Z15 I^U?TU7d=U^^cTi9<YZflP2
+Z16 V:47l24SJZJZaR_;@IUzkF0
+R4
+Z17 w1710956850
+Z18 8Waveform1.vwf.vt
+Z19 FWaveform1.vwf.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z20 !s108 1710956852.603000
+Z21 !s107 Waveform1.vwf.vt|
+Z22 !s90 -work|work|Waveform1.vwf.vt|
+!s101 -O0
+R10
+Z23 n@front@sensor_vlg_check_tst
+vFrontSensor_vlg_sample_tst
+!i10b 1
+Z24 !s100 lm0c3D3V9XNg_KM4_SH]a0
+Z25 I00zm=:h]T1XWD142ikRb:3
+Z26 Va=z:M3NVVcWRjI`DKNNln2
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@front@sensor_vlg_sample_tst
+vFrontSensor_vlg_vec_tst
+!i10b 1
+!s100 W]D237mWSX=4jRA_GF1_S1
+If<85;gWQISV^gI3HEfB642
+Z28 VkkkRcf?S06aUzaJY_17hU1
+R4
+R17
+R18
+R19
+Z29 L0 312
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@front@sensor_vlg_vec_tst

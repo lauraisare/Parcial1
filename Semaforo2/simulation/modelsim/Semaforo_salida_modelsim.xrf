@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/laura/Documents/Parcial_peaje/Semaforo2/Semaforo_salida.vhd
+source_file = 1, C:/Users/laura/Documents/Parcial_peaje/Semaforo2/db/Semaforo_salida.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = Semaforo_salida
+instance = comp, \semaforo_rojo~output\, semaforo_rojo~output, Semaforo_salida, 1
+instance = comp, \semaforo_verde~output\, semaforo_verde~output, Semaforo_salida, 1
+instance = comp, \SemaforoSalida~input\, SemaforoSalida~input, Semaforo_salida, 1

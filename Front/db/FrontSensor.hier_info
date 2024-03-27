@@ -1,0 +1,45 @@
+|FrontSensor
+clk => alarm~reg0.CLK
+clk => led_rojo~reg0.CLK
+clk => led_verde~reg0.CLK
+clk => categoria[0]~reg0.CLK
+clk => categoria[1]~reg0.CLK
+clk => barrera_final~reg0.CLK
+clk => barrera_inicial~reg0.CLK
+clk => vehiculo_detectado.CLK
+clk => intentos[0].CLK
+clk => intentos[1].CLK
+reset => alarm~reg0.ACLR
+reset => led_rojo~reg0.ACLR
+reset => led_verde~reg0.ACLR
+reset => categoria[0]~reg0.ACLR
+reset => categoria[1]~reg0.ACLR
+reset => barrera_final~reg0.ACLR
+reset => barrera_inicial~reg0.ACLR
+reset => vehiculo_detectado.ACLR
+reset => intentos[0].ACLR
+reset => intentos[1].ACLR
+front_sensor => barrera_final.OUTPUTSELECT
+id_valida => categoria.OUTPUTSELECT
+id_valida => categoria.OUTPUTSELECT
+id_valida => barrera_inicial.OUTPUTSELECT
+id_valida => led_verde.OUTPUTSELECT
+id_valida => vehiculo_detectado.OUTPUTSELECT
+id_valida => intentos.OUTPUTSELECT
+id_valida => intentos.OUTPUTSELECT
+id_valida => led_rojo.OUTPUTSELECT
+id_valida => alarm.OUTPUTSELECT
+identificacion[0] => ~NO_FANOUT~
+identificacion[1] => categoria.DATAB
+identificacion[2] => categoria.DATAB
+identificacion[3] => ~NO_FANOUT~
+identificacion[4] => ~NO_FANOUT~
+barrera_inicial <= barrera_inicial~reg0.DB_MAX_OUTPUT_PORT_TYPE
+barrera_final <= barrera_final~reg0.DB_MAX_OUTPUT_PORT_TYPE
+categoria[0] <= categoria[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+categoria[1] <= categoria[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led_verde << led_verde~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led_rojo << led_rojo~reg0.DB_MAX_OUTPUT_PORT_TYPE
+alarm <= alarm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

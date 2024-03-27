@@ -1,0 +1,133 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
+
+// DATE "03/19/2024 11:44:43"
+
+// 
+// Device: Altera EP3C16F484C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Controlador_semaforo (
+	barrera_cerrada,
+	carril_cerrado,
+	semaforo_rojo,
+	semaforo_verde);
+input 	barrera_cerrada;
+input 	carril_cerrado;
+output 	semaforo_rojo;
+output 	semaforo_verde;
+
+// Design Ports Information
+// semaforo_rojo	=>  Location: PIN_Y10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// semaforo_verde	=>  Location: PIN_W10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// barrera_cerrada	=>  Location: PIN_H1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// carril_cerrado	=>  Location: PIN_J6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \semaforo_rojo~output_o ;
+wire \semaforo_verde~output_o ;
+wire \carril_cerrado~input_o ;
+wire \barrera_cerrada~input_o ;
+wire \process_0~0_combout ;
+
+
+// Location: IOOBUF_X19_Y0_N9
+cycloneiii_io_obuf \semaforo_rojo~output (
+	.i(\process_0~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\semaforo_rojo~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \semaforo_rojo~output .bus_hold = "false";
+defparam \semaforo_rojo~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X19_Y0_N16
+cycloneiii_io_obuf \semaforo_verde~output (
+	.i(!\process_0~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\semaforo_verde~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \semaforo_verde~output .bus_hold = "false";
+defparam \semaforo_verde~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y24_N1
+cycloneiii_io_ibuf \carril_cerrado~input (
+	.i(carril_cerrado),
+	.ibar(gnd),
+	.o(\carril_cerrado~input_o ));
+// synopsys translate_off
+defparam \carril_cerrado~input .bus_hold = "false";
+defparam \carril_cerrado~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y21_N15
+cycloneiii_io_ibuf \barrera_cerrada~input (
+	.i(barrera_cerrada),
+	.ibar(gnd),
+	.o(\barrera_cerrada~input_o ));
+// synopsys translate_off
+defparam \barrera_cerrada~input .bus_hold = "false";
+defparam \barrera_cerrada~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X10_Y17_N24
+cycloneiii_lcell_comb \process_0~0 (
+// Equation(s):
+// \process_0~0_combout  = (\carril_cerrado~input_o ) # (\barrera_cerrada~input_o )
+
+	.dataa(\carril_cerrado~input_o ),
+	.datab(gnd),
+	.datac(\barrera_cerrada~input_o ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\process_0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \process_0~0 .lut_mask = 16'hFAFA;
+defparam \process_0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign semaforo_rojo = \semaforo_rojo~output_o ;
+
+assign semaforo_verde = \semaforo_verde~output_o ;
+
+endmodule

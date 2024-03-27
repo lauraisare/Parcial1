@@ -1,0 +1,19 @@
+|PagoPeaje
+Categoria[0] => Mux0.IN5
+Categoria[0] => Mux1.IN5
+Categoria[0] => Mux2.IN5
+Categoria[1] => Mux0.IN4
+Categoria[1] => Mux1.IN4
+Categoria[1] => Mux2.IN4
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => SumaTarifa.OUTPUTSELECT
+Pago => UsuarioPagado.DATAIN
+Pago => SemaforoSalida.DATAIN
+Tarifa[0] << SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+Tarifa[1] << SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+Tarifa[2] << SumaTarifa.DB_MAX_OUTPUT_PORT_TYPE
+UsuarioPagado << Pago.DB_MAX_OUTPUT_PORT_TYPE
+SemaforoSalida << Pago.DB_MAX_OUTPUT_PORT_TYPE
+
+

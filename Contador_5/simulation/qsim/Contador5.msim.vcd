@@ -1,0 +1,100 @@
+$comment
+	File created using the following command:
+		vcd file Contador5.msim.vcd -direction
+$end
+$date
+	Tue Mar 19 13:20:24 2024
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Contador5_vlg_vec_tst $end
+$var reg 1 ! back_sensor $end
+$var reg 1 " front_sensor $end
+$var wire 1 # contador_out [6] $end
+$var wire 1 $ contador_out [5] $end
+$var wire 1 % contador_out [4] $end
+$var wire 1 & contador_out [3] $end
+$var wire 1 ' contador_out [2] $end
+$var wire 1 ( contador_out [1] $end
+$var wire 1 ) contador_out [0] $end
+$var wire 1 * sampler $end
+$scope module i1 $end
+$var wire 1 + gnd $end
+$var wire 1 , vcc $end
+$var wire 1 - unknown $end
+$var tri1 1 . devclrn $end
+$var tri1 1 / devpor $end
+$var tri1 1 0 devoe $end
+$var wire 1 1 contador_out[0]~output_o $end
+$var wire 1 2 contador_out[1]~output_o $end
+$var wire 1 3 contador_out[2]~output_o $end
+$var wire 1 4 contador_out[3]~output_o $end
+$var wire 1 5 contador_out[4]~output_o $end
+$var wire 1 6 contador_out[5]~output_o $end
+$var wire 1 7 contador_out[6]~output_o $end
+$var wire 1 8 front_sensor~input_o $end
+$var wire 1 9 back_sensor~input_o $end
+$var wire 1 : contador[1]~1_combout $end
+$var wire 1 ; contador[1]~1clkctrl_outclk $end
+$var wire 1 < contador[0]~2_combout $end
+$var wire 1 = contador[1]~3_combout $end
+$var wire 1 > contador[2]~0_combout $end
+$var wire 1 ? Mux6~0_combout $end
+$var wire 1 @ Mux2~0_combout $end
+$var wire 1 A Mux4~0_combout $end
+$var wire 1 B Mux2~1_combout $end
+$var wire 1 C Mux1~0_combout $end
+$var wire 1 D Mux0~0_combout $end
+$var wire 1 E contador [2] $end
+$var wire 1 F contador [1] $end
+$var wire 1 G contador [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+1"
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+x*
+0+
+1,
+x-
+1.
+1/
+10
+x1
+x2
+x3
+x4
+x5
+x6
+x7
+18
+19
+1:
+1;
+x<
+x=
+x>
+x?
+x@
+xA
+xB
+xC
+xD
+xG
+xF
+xE
+$end
+#1000000

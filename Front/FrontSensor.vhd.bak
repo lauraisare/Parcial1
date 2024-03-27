@@ -1,0 +1,125 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity FrontSensor is
+    port (
+        -- Entradas del sensor
+        vehicle_detected : in std_logic;
+        identification_valid : in std_logic;
+        identification_data : in std_logic_vector(4 downto 0); -- Identificación de 5 bits
+        -- Salidas del sensor
+        request_identification : out std_logic;
+        barrier_control : out std_logic;
+        green_led : out std_logic;
+        red_led : out std_logic;
+        category_output : out std_logic_vector(1 downto 0);
+        identification_display : out std_logic_vector(4 downto 0)
+    );
+end FrontSensor;
+
+architecture Behavioral of FrontSensor is
+    -- Constantes para los estados del sensor
+    type State is (IDLE, WAIT_FOR_IDENTIFICATION, VERIFY_IDENTIFICATION, IDENTIFICATION_CORRECT, IDENTIFICATION_INCORRECT);
+    signal current_state, next_state : State;
+
+    -- Variables auxiliares
+    signal identification_attempts : integer range 0 to 3;
+    signal timer_count : integer range 0 to 50000000; -- Contador para el parpadeo del LED verde
+
+    -- Tabla de categorías de vehículos
+    type CategoryTable is array (0 to 3) of std_logic_vector(1 downto 0);
+    constant CATEGORY_TABLE : CategoryTable := (
+        0 => "00", -- Sin categoría
+        1 => "01", -- Categoría I
+        2 => "10", -- Categoría II
+        3 => "11" -- Categoría III
+    );
+
+    -- Variables de visualización de la identificación
+    signal identification_display_value : std_logic_vector(4 downto 0);
+
+begin
+    -- Máquina de estados finitos para controlar el sensor
+    process (vehicle_detected, identification_valid, timer_count)
+    begin
+        current_state <= next_state;
+        case current_state is
+            when IDLE =>
+                if vehicle_detected = '1' then
+                    next_state <= WAIT_FOR_IDENTIFICATION;
+                else
+                    next_state <= IDLE;
+                end if;
+
+            when WAIT_FOR_IDENTIFICATION =>
+                if vehicle_detected = '0' then
+                    next_state <= IDLE;
+                elsif identification_valid = '1' then
+                    next_state <= VERIFY_IDENTIFICATION;
+                    identification_attempts <= 0;
+                else
+                    next_state <= WAIT_FOR_IDENTIFICATION;
+                end if;
+
+            when VERIFY_IDENTIFICATION =>
+                if identification_valid = '1' then
+                    if identification_attempts < 3 then
+                        next_state <= IDENTIFICATION_CORRECT;
+                    else
+                        next_state <= IDENTIFICATION_INCORRECT;
+                    end if;
+                else
+                    next_state <= WAIT_FOR_IDENTIFICATION;
+                end if;
+
+            when IDENTIFICATION_CORRECT =>
+                if timer_count < 50000000 then
+                    next_state <= IDENTIFICATION_CORRECT;
+                else
+                    next_state <= IDLE;
+                end if;
+
+            when IDENTIFICATION_INCORRECT =>
+                if timer_count < 1000000000 then
+                    next_state <= IDENTIFICATION_INCORRECT;
+                else
+                    next_state <= WAIT_FOR_IDENTIFICATION;
+                end if;
+
+            when others =>
+                next_state <= IDLE;
+        end case;
+    end process;
+
+    -- Salidas del sensor
+    request_identification <= '1' when current_state = WAIT_FOR_IDENTIFICATION else '0';
+    barrier_control <= '1' when current_state = VERIFY_IDENTIFICATION else '0';
+    green_led <= '1' when current_state = IDENTIFICATION_CORRECT and timer_count < 25000000 else '0';
+    red_led <= '1' when current_state = IDENTIFICATION_INCORRECT and timer_count < 50000000 else '0';
+
+    -- Proceso para mostrar la categoría y la identificación
+    process (current_state, identification_data)
+    begin
+        case current_state is
+            when IDENTIFICATION_CORRECT | IDENTIFICATION_INCORRECT =>
+                identification_display_value <= identification_data;
+            when others =>
+                identification_display_value <= (others => '0');
+        end case;
+    end process;
+
+    category_output <= CATEGORY_TABLE(to_integer(unsigned(identification_data(4 downto 3))));
+    identification_display <= identification_display_value;
+
+    -- Contador para el parpadeo del LED verde
+    process (vehicle_detected)
+    begin
+        if vehicle_detected = '1' then
+            timer_count <= timer_count + 1;
+        else
+            timer_count <= 0;
+        end if;
+    end process;
+
+end Behavioral;
